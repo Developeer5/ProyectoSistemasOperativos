@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #1f242d;
+}
+
+a#btn-animado {
+  position: relative;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: #262c37;
+  padding: 10px 30px;
+  transition: 0.5s;
+  overflow: hidden;
+  user-select: none;
+  cursor: pointer;
+}
+
+a#btn-animado:hover {
+  color: #00eeff;
+  letter-spacing: 0.25em;
+  text-shadow: 0 0 5px #00eeff;
+}
+
+a#btn-animado span {
+  position: absolute;
+  display: block;
+  background: #00eeff;
+  box-shadow: 0 0 5px #00eeff;
+}
+
+a#btn-animado span:nth-child(1) {
+  left: 0;
+  top: 0;
+  width: 50.5%;
+  height: 1.5px;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+
+a#btn-animado:hover span:nth-child(1) {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+
+a#btn-animado span:nth-child(2) {
+  right: 0;
+  top: 0;
+  width: 50.5%;
+  height: 1.5px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+
+a#btn-animado:hover span:nth-child(2) {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+a#btn-animado span:nth-child(3) {
+  right: 0;
+  top: 0;
+  width: 1.5px;
+  height: 100%;
+  transform-origin: bottom;
+  transform: scaleY(0);
+  transition: transform 0.5s;
+  transition-delay: 0.4s;
+}
+
+a#btn-animado:hover span:nth-child(3) {
+  transform: scaleY(1);
+  transform-origin: top;
+}
+
+a#btn-animado span:nth-child(4) {
+  left: 0;
+  top: 0;
+  width: 1.5px;
+  height: 100%;
+  transform-origin: bottom;
+  transform: scaleY(0);
+  transition: transform 0.5s;
+  transition-delay: 0.4s;
+}
+
+a#btn-animado:hover span:nth-child(4) {
+  transform: scaleY(1);
+  transform-origin: top;
+}
+
+a#btn-animado span:nth-child(5) {
+  left: 0;
+  bottom: 0;
+  width: 50.5%;
+  height: 1.5px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+  transition-delay: 0.8s;
+}
+
+a#btn-animado:hover span:nth-child(5) {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+
+a#btn-animado span:nth-child(6) {
+  right: 0;
+  bottom: 0;
+  width: 50.5%;
+  height: 1.5px;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+  transition-delay: 0.8s;
+}
+
+a#btn-animado:hover span:nth-child(6) {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Ripple effect */
+a#btn-animado.clicked {
+  animation: pulse-click 0.6s ease forwards;
+  color: #00eeff;
+  box-shadow: 0 0 10px #00eeff, 0 0 40px #00eeff;
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(0, 238, 255, 0.5);
+  animation: ripple-effect 0.6s linear;
+  pointer-events: none;
+  transform: scale(0);
+  opacity: 0.75;
+  z-index: 10;
+}
+
+@keyframes ripple-effect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-click {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
