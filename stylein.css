@@ -16,6 +16,16 @@ body {
   background-size: cover;
   background-position: center;
   color: #262c37;
+
+  background: linear-gradient(-45deg, #1f242d, #00eeff, #2f363d, #00eeff);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Header */
